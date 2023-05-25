@@ -28,7 +28,7 @@ const HomeScreen = ({ navigation }) => {
       <View style={[styles.buttons3, styles.paddingTop100]}>
         <Pressable
           style={styles.button}
-          onPress={() => navigation.navigate("Learning")}
+          onPress={() => navigation.navigate("LearningScreen")}
         >
           <Text style={[styles.text, textStyles.textRegular]}>nauka</Text>
         </Pressable>

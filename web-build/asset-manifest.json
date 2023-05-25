@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/static/js/main.a42702ad.js",
+    "static/js/951.297e9e0b.js": "/static/js/951.297e9e0b.js",
+    "static/media/SourceSansPro-Regular.ttf": "/static/media/SourceSansPro-Regular.a5357cc4e5d4eeb42793.ttf",
+    "static/media/SourceSansPro-Bold.ttf": "/static/media/SourceSansPro-Bold.4a6e47d1db848f5e8218.ttf",
+    "static/media/salior-merry-logo-white.png": "/static/media/salior-merry-logo-white.59c31ac9e9d0498b04c6.png",
+    "favicon.ico": "/favicon.ico",
+    "index.html": "/index.html",
+    "favicon-32.png": "/favicon-32.png",
+    "favicon-16.png": "/favicon-16.png",
+    "serve.json": "/serve.json",
+    "manifest.json": "/manifest.json",
+    "main.a42702ad.js.map": "/static/js/main.a42702ad.js.map",
+    "951.297e9e0b.js.map": "/static/js/951.297e9e0b.js.map"
+  },
+  "entrypoints": [
+    "static/js/951.297e9e0b.js",
+    "static/js/main.a42702ad.js"
+  ]
+}

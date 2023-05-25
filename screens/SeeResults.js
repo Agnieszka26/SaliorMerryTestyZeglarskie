@@ -63,7 +63,7 @@ const SeeResults = ({ navigation }) => {
 			{drawedQuestions?.map(
 				({ question, options, answer }, i) =>
 					i === step - 1 && (
-						<View key={question}>
+						<View key={question}  style={[styles.container]}>
 							<Text style={styles.textWhite}> {question}</Text>
 
 							{options?.map((o) => {

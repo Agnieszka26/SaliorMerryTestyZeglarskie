@@ -12,7 +12,9 @@ import HomeScreen from "./screens/HomeScreen";
 import LearningScreen from "./screens/LearningScreen";
 import QuizScreen from "./screens/QuizScreen";
 import QuestionQuizScreen from "./screens/QuestionQuizScreen";
-import SeeResults from './screens/SeeResults'
+import SeeResults from './screens/SeeResults';
+import LearningQuiz from "./screens/LearningQuiz";
+import GetNumberQuestion from "./screens/GetNumberQuestions";
 import { AppContextProvider } from "./assets/context/AppContextProvider";
 
 const Stack = createStackNavigator();
@@ -43,10 +45,12 @@ export default function App() {
             component={HomeScreen}
             options={{ headerShown: false }}
           />
-          <Stack.Screen name="Learning" component={LearningScreen}   options={{ headerShown: false }}/>
+          <Stack.Screen name="LearningScreen" component={LearningScreen}   options={{ headerShown: false }}/>
           <Stack.Screen name="Quiz" component={QuizScreen}  options={{ headerShown: false }} />
           <Stack.Screen name="QuestionQuiz" component={QuestionQuizScreen}   options={{ headerShown: false }}/>
-          <Stack.Screen name="SeeResults" component={SeeResults}   options={{ headerShown: true }}/>
+          <Stack.Screen name="SeeResults" component={SeeResults}   options={{ headerShown: false }}/>
+          <Stack.Screen name="LearningQuiz" component={LearningQuiz}   options={{ headerShown: false }}/>
+          <Stack.Screen name="GetNumberQuestion" component={GetNumberQuestion}   options={{ headerShown: false }}/>
         </Stack.Navigator>
       </NavigationContainer>
     </AppContextProvider>

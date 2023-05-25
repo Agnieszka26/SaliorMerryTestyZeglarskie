@@ -9,6 +9,8 @@ export const AppContextProvider = (props) => {
   const [wrongAnswers, setWrongAnswers] = useState([]);
   const[givenAnswers, setGivenAnswers]= useState([]);
 const [doneQuestions, setDoneQuestions] = useState([]);
+const [department, setDepartment] = useState([]);
+const [moduleName, setModuleName] = useState('')
   //@TODO
   //losowanie pytań z każdego działu z tarownictwa 5, budowa jechtu 5
   const [drawedQuestions, setDrawedQuestions] = useState([]);
@@ -26,7 +28,9 @@ const [doneQuestions, setDoneQuestions] = useState([]);
         setWrongAnswers,
         questionNumber, setQuestionNumber,
         givenAnswers, setGivenAnswers,
-        doneQuestions, setDoneQuestions
+        doneQuestions, setDoneQuestions,
+        department, setDepartment,
+        moduleName, setModuleName
       }}
     >
       {props.children}

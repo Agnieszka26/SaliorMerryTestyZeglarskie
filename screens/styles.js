@@ -1,12 +1,50 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
+	input: {
+		height: 40,
+		margin: 12,
+		borderWidth: 1,
+		padding: 10,
+		backgroundColor: "#FFFFFF",
+	},
+
+	disabledButton: {
+		marginTop: 16,
+		height: 64,
+		width: 250,
+		textAlign: "center",
+		flex: 4,
+		alignItems: "center",
+		justifyContent: "center",
+		color: "#050F36",
+		borderRadius: 16,
+		backgroundColor: "#ACACAA",
+		cursor: "no-drop",
+		opacity: "40%",
+	},
 	image: {
 		height: 200,
 		width: 200,
 	},
 	container: {
 		flex: 1,
+		backgroundColor: "#050F36",
+		alignItems: "center",
+		justifyContent: "center",
+		paddingLeft: 16,
+		paddingRight: 16,
+	},
+	container5: {
+		flex: 5,
+		backgroundColor: "#050F36",
+		alignItems: "center",
+		justifyContent: "center",
+		paddingLeft: 16,
+		paddingRight: 16,
+	},
+	container2: {
+		flex: 2,
 		backgroundColor: "#050F36",
 		alignItems: "center",
 		justifyContent: "center",
@@ -38,9 +76,27 @@ export const styles = StyleSheet.create({
 		color: "#050F36",
 		borderRadius: 16,
 	},
+	button6: {
+		marginTop: 16,
+		height: 64,
+		width: 250,
+		backgroundColor: "#FFFFFF",
+		textAlign: "center",
+		flex: 8,
+		alignItems: "center",
+		justifyContent: "center",
+		color: "#050F36",
+		borderRadius: 16,
+	},
 
 	textRed: {
 		fontSize: 32,
+		fontFamily: "SourceSansPro-Bold",
+		color: "#D53148",
+		paddingBottom: 32,
+	},
+	textRedSmall: {
+		fontSize: 20,
 		fontFamily: "SourceSansPro-Bold",
 		color: "#D53148",
 		paddingBottom: 32,
@@ -87,7 +143,7 @@ export const styles = StyleSheet.create({
 	bigButton: {
 		height: 75,
 		width: 350,
-		marginTop: 8,
+		marginTop: 32,
 		backgroundColor: "#FFFFFF",
 		textAlign: "center",
 		alignItems: "center",
@@ -115,7 +171,7 @@ export const styles = StyleSheet.create({
 	correct: {
 		height: 75,
 		width: 350,
-		marginTop: 8,
+		marginTop: 32,
 		backgroundColor: "#E7FFE4",
 		textAlign: "center",
 		alignItems: "center",
@@ -127,8 +183,8 @@ export const styles = StyleSheet.create({
 	wrong: {
 		height: 75,
 		width: 350,
-		marginTop: 8,
-		backgroundColor:"#FFECEF",
+		marginTop: 32,
+		backgroundColor: "#FFECEF",
 		textAlign: "center",
 		alignItems: "center",
 		justifyContent: "center",
