@@ -1,8 +1,8 @@
 import { Text, View, Pressable, StyleSheet, Image } from "react-native";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { AppContext } from "../assets/context/AppContextProvider";
 import { useFonts } from "expo-font";
-import { styles } from "./styles";
+import { styles } from "../assets/styles/styles";
 import NextIcon from "../components/NextIcon.js";
 
 const SeeResults = ({ navigation }) => {
@@ -61,11 +61,14 @@ const SeeResults = ({ navigation }) => {
 			)}
 
 			{drawedQuestions?.map(
-				({ question, options, answer }, i) =>
+				({ question, options, answer, image}, i) =>
 					i === step - 1 && (
-						<View key={question}  style={[styles.container]}>
+						<View key={question}  style={[styles.containerMW300]}>
 							<Text style={styles.textWhite}> {question}</Text>
-
+							<Image
+												source={image}
+												style={image && [styles.image]}
+											/>
 							{options?.map((o) => {
 								return (
 									<View key={o}>
@@ -87,17 +90,17 @@ const SeeResults = ({ navigation }) => {
 									</View>
 								);
 							})}
-						</View>
-					)
-			)}
-			{drawedQuestions.length + 1 !== step && (
 				<Pressable
 					style={styles.roundButton}
 					onPress={() => handleNextButton()}
 				>
 					<NextIcon />
 				</Pressable>
+						</View>
+					)
 			)}
+
+
 		</View>
 	);
 };

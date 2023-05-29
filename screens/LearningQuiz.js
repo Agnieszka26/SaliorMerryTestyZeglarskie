@@ -1,9 +1,9 @@
 import { useFonts } from "expo-font";
 import React, { useContext, useState } from "react";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { AppContext } from "../assets/context/AppContextProvider";
+import { styles } from "../assets/styles/styles";
 import NextIcon from "../components/NextIcon.js";
-import { styles } from "./styles";
 
 const LearningQuiz = ({ navigation }) => {
 	const { step, setStep, drawedQuestions, moduleName } = useContext(AppContext);
@@ -30,7 +30,7 @@ const LearningQuiz = ({ navigation }) => {
 	const handleFinish = () => {
 		setStep(1);
 		setDrawedQuestions([]);
-	 navigation.navigate("Home");
+		navigation.navigate("Home");
 	};
 
 	return (
@@ -39,52 +39,55 @@ const LearningQuiz = ({ navigation }) => {
 			<Text style={[styles.textRedSmall, textStyles.textRegular]}>
 				{moduleName}
 			</Text>
-			{ step === drawedQuestions.length &&
-(
-	<View>
-		<Text style={styles.textWhite}>
-			Gratuluję, zrobiłeś wszystkie zamierzone pytania z danego działu.
-		</Text>
-		<Pressable style={styles.bigButton} onPress={handleFinish}>
-			<Text style={[styles.text, styles.textRegular]}>Zakończ</Text>
-		</Pressable>
-	</View>
-)
-			}
+			{step === drawedQuestions.length && (
+				<View>
+					<Text style={styles.textWhite}>
+						Gratuluję, zrobiłeś wszystkie zamierzone pytania z danego działu.
+					</Text>
+					<Pressable style={styles.bigButton} onPress={handleFinish}>
+						<Text style={[styles.text, styles.textRegular]}>Zakończ</Text>
+					</Pressable>
+				</View>
+			)}
 			<Text style={[styles.textWhiteSmall, styles.textRegular]}>Pytanie</Text>
 			<Text style={[styles.textWhiteSmall, styles.textRegular]}>
 				{step} / {drawedQuestions.length}
 			</Text>
-			{drawedQuestions?.map(({ question, options, answer }, index) =>
-				index === step - 1 && (
-					<View key={question}>
-						<Text style={styles.textWhite}> {question}</Text>
-						{options?.map((option, index) => {
-							return (
-								<View key={option + index} style={[styles.container]}>
-									<Pressable
-										style={
-											myAnswer === option && myAnswer === answer
-												? [styles.yourAnswer, styles.correct]
-												: myAnswer === option && myAnswer !== answer
-												? [styles.yourAnswer, styles.wrong]
-												: myAnswer && option === answer
-												? [styles.correct]
-												: [styles.bigButton]
-										}
-										onPress={() => handleOnPressAnswer(option)}
-									>
-										<Text
-											style={[styles.textSmallButton, textStyles.textRegular]}
+			{drawedQuestions?.map(
+				({ question, options, answer, image }, index) =>
+					index === step - 1 && (
+						<View key={question}>
+							<Text style={styles.textWhite}> {question}</Text>
+							<Image
+								source={image}
+								style={image && [styles.image, styles.center]}
+							/>
+							{options?.map((option, index) => {
+								return (
+									<View key={option + index} style={[styles.container]}>
+										<Pressable
+											style={
+												myAnswer === option && myAnswer === answer
+													? [styles.yourAnswer, styles.correct]
+													: myAnswer === option && myAnswer !== answer
+													? [styles.yourAnswer, styles.wrong]
+													: myAnswer && option === answer
+													? [styles.correct]
+													: [styles.bigButton]
+											}
+											onPress={() => handleOnPressAnswer(option)}
 										>
-											{option}
-										</Text>
-									</Pressable>
-								</View>
-							);
-						})}
-					</View>
-				)
+											<Text
+												style={[styles.textSmallButton, textStyles.textRegular]}
+											>
+												{option}
+											</Text>
+										</Pressable>
+									</View>
+								);
+							})}
+						</View>
+					)
 			)}
 
 			{isGivenAnswer && (

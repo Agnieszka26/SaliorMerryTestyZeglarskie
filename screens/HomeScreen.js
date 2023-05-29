@@ -4,7 +4,7 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useCallback } from "react";
 import logo from "../assets/salior-merry-logo-white.png";
-import {styles} from "./styles"
+import {styles} from "../assets/styles/styles"
 
 const HomeScreen = ({ navigation }) => {
   const [fontsLoaded] = useFonts({

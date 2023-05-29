@@ -1,16 +1,17 @@
 import React from "react";
 import { View, Text, StyleSheet, Pressable } from "react-native";
-import { styles } from "./styles";
+import { styles } from "../assets/styles/styles";
 import { AppContext } from "../assets/context/AppContextProvider";
 import { useContext } from "react";
-
 import { budowaJachtu } from "../assets/questions/budowaJachtu";
 import { ratownictwo } from "../assets/questions/ratownictwo";
+import {locja} from "../assets/questions/locja";
+
 const buttons = [
 	{ path: "inlandRegulations", name: "przepisy śródlądowe", disabled: true },
 	{ path: "yachtBuilding", name: "budowa jachtów", disabled: false },
 	{ path: "sailingTheory", name: "teoria żeglowania", disabled: true },
-	{ path: "pilotage", name: "locja", disabled: true },
+	{ path: "pilotage", name: "locja", disabled: false },
 	{ path: "meteorology", name: "meteorologia", disabled: true },
 	{ path: "lifesaving", name: "ratownictwo", disabled: false },
 ];
@@ -27,6 +28,11 @@ const LearningScreen = ({ navigation }) => {
 			case "yachtBuilding":
 				setModuleName(name);
 				setDepartment(budowaJachtu);
+				navigation.navigate("GetNumberQuestion");
+				break;
+			case "pilotage":
+				setModuleName(name);
+				setDepartment(locja);
 				navigation.navigate("GetNumberQuestion");
 				break;
 			default:

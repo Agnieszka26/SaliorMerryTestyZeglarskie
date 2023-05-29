@@ -1,10 +1,10 @@
-import { Text, View, Pressable, StyleSheet } from "react-native";
-import React, { useContext, useEffect, useState } from "react";
-import { AppContext } from "../assets/context/AppContextProvider";
 import { useFonts } from "expo-font";
-import { styles } from "./styles";
+import React, { useContext, useEffect, useState } from "react";
+import { Pressable, StyleSheet, Text, View, Image} from "react-native";
+import { AppContext } from "../assets/context/AppContextProvider";
+import { styles } from "../assets/styles/styles";
 
-const QuestionQuizScreen = ({navigation}) => {
+const QuestionQuizScreen = ({ navigation }) => {
 	const [fontsLoaded] = useFonts({
 		"SourceSansPro-Bold": require("../assets/fonts/SourceSansPro-Bold.ttf"),
 		"SourceSansPr-Regular": require("../assets/fonts/SourceSansPro-Regular.ttf"),
@@ -17,20 +17,26 @@ const QuestionQuizScreen = ({navigation}) => {
 		drawedQuestions,
 		setGivenAnswers,
 		setDrawedQuestions,
-		correctAnswers
+		correctAnswers,
 	} = useContext(AppContext);
-const [ minutes, setMinutes] = useState(0);
-const [ seconds, setSeconds] = useState(5);
+	const [minutes, setMinutes] = useState(89);
+	const [seconds, setSeconds] = useState(59);
 
-useEffect(()=>{
-	const interval = setInterval(()=>{
-		if(seconds > 0){	setSeconds(sek => sek-1) }else{setSeconds(59); setMinutes(min =>min -1)}
-	 if (seconds === 0 && minutes === 0) { console.log("time up")}
-		}, 1000)
-		console.log(seconds)
+	useEffect(() => {
+		const interval = setInterval(() => {
+			if (seconds > 0) {
+				setSeconds((sek) => sek - 1);
+			} else {
+				setSeconds(59);
+				setMinutes((min) => min - 1);
+			}
+			if (seconds === 0 && minutes === 0) {
+				console.log("time up");
+			}
+		}, 1000);
+		console.log(seconds);
 		return () => clearInterval(interval);
-},[ seconds])
-
+	}, [seconds]);
 
 	const handleGiveAnswer = (givenAnswer, correctAnswer) => {
 		if (givenAnswer === correctAnswer) {
@@ -47,7 +53,7 @@ useEffect(()=>{
 		setGivenAnswers([]);
 		setWrongAnswers([]);
 		setCorrectAnswers([]);
-		setDrawedQuestions([])
+		setDrawedQuestions([]);
 		navigation.navigate("Home");
 	};
 
@@ -70,10 +76,7 @@ useEffect(()=>{
 							</Text>
 						</View>
 
-						<Pressable
-							style={styles.bigButton}
-							onPress={()=>handleFinish()}
-						>
+						<Pressable style={styles.bigButton} onPress={() => handleFinish()}>
 							<Text style={[styles.text, styles.textRegular]}>Zakończ</Text>
 						</Pressable>
 
@@ -99,23 +102,30 @@ useEffect(()=>{
 							</View>
 							<View>
 								<Text style={[styles.textWhiteSmall, styles.textRegular]}>
-
 									Czas
 								</Text>
 								<Text style={[styles.textWhiteSmall, styles.textRegular]}>
-								{minutes.toString().length === 1 ? `0${minutes}` :  `${minutes}`}
+									{minutes.toString().length === 1
+										? `0${minutes}`
+										: `${minutes}`}
 									:
-								{seconds.toString().length === 1 ? `0${seconds}` :  `${seconds}`}
+									{seconds.toString().length === 1
+										? `0${seconds}`
+										: `${seconds}`}
 								</Text>
 							</View>
 						</View>
 
 						<View>
 							{drawedQuestions?.map(
-								({ question, options, answer, id }, index) =>
+								({ question, options, answer, id, image }, index) =>
 									index === step - 1 && (
 										<View key={question}>
 											<Text style={styles.textWhite}> {question}</Text>
+											<Image
+												source={image}
+												style={image && [styles.image, styles.center]}
+											/>
 											{options?.map((x, index) => {
 												return (
 													<View key={x + index}>

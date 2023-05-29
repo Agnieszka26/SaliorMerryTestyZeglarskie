@@ -5,7 +5,9 @@ import { AppContext } from "../assets/context/AppContextProvider";
 import { useContext } from "react";
 import { ratownictwo } from "../assets/questions/ratownictwo";
 import { budowaJachtu } from "../assets/questions/budowaJachtu";
-import {styles} from "./styles"
+import {locja } from "../assets/questions/locja";
+import {styles} from "../assets/styles/styles";
+import {getRandomQuestions} from "../assets/helpers/index"
 
 const QuizsScreen = ({ navigation }) => {
   const [fontsLoaded] = useFonts({
@@ -15,15 +17,9 @@ const QuizsScreen = ({ navigation }) => {
   const { setDrawedQuestions } =
     useContext(AppContext);
 
-  const getRandomQuestions = (numberOfQuestions, questions) => {
-    for (let i = questions.length - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i + Math.floor(Math.random())));
-      return [questions[i], questions[j]] = [questions[j], questions[i]].slice(0, numberOfQuestions);
-    };
-  };
 
   const handleToTest =()=>{
-    setDrawedQuestions(prev => [...prev, ...getRandomQuestions(1, ratownictwo), ...getRandomQuestions(1, budowaJachtu)].flat())
+    setDrawedQuestions(prev => [...prev, ...getRandomQuestions(ratownictwo).slice(0, 7), ...getRandomQuestions(budowaJachtu).slice(0,3), ...getRandomQuestions(locja).slice(0,3)].flat())
      navigation.navigate("QuestionQuiz")}
 
   return (
