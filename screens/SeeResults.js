@@ -31,6 +31,8 @@ const SeeResults = ({ navigation }) => {
 		setStep(1);
 		setGivenAnswers([]);
 		setDrawedQuestions([]);
+		setCorrectAnswers([]);
+		setWrongAnswers([]);
 		navigation.navigate("Home");
 	};
 

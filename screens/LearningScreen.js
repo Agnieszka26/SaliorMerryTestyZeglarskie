@@ -6,9 +6,10 @@ import { useContext } from "react";
 import { budowaJachtu } from "../assets/questions/budowaJachtu";
 import { ratownictwo } from "../assets/questions/ratownictwo";
 import {locja} from "../assets/questions/locja";
+import {przepisy} from "../assets/questions/przepisy";
 
 const buttons = [
-	{ path: "inlandRegulations", name: "przepisy śródlądowe", disabled: true },
+	{ path: "inlandRegulations", name: "przepisy", disabled: false },
 	{ path: "yachtBuilding", name: "budowa jachtów", disabled: false },
 	{ path: "sailingTheory", name: "teoria żeglowania", disabled: true },
 	{ path: "pilotage", name: "locja", disabled: false },
@@ -20,6 +21,11 @@ const LearningScreen = ({ navigation }) => {
 	const { setDepartment, setModuleName } = useContext(AppContext);
 	const getDepartment = (path, name) => {
 		switch (path) {
+			case "inlandRegulations":
+				setModuleName(name);
+				setDepartment(przepisy);
+				navigation.navigate("GetNumberQuestion");
+				break;
 			case "lifesaving":
 				setModuleName(name);
 				setDepartment(ratownictwo);
