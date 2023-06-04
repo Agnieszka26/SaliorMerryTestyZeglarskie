@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/static/js/main.64746a80.js",
-    "static/js/705.35c37542.js": "/static/js/705.35c37542.js",
+    "main.js": "/static/js/main.a2ff1c8a.js",
+    "static/js/790.6deb53af.js": "/static/js/790.6deb53af.js",
     "static/media/meteo_32.jpg": "/static/media/meteo_32.08c4c0e2ee012a111ada.jpg",
     "static/media/SourceSansPro-Regular.ttf": "/static/media/SourceSansPro-Regular.a5357cc4e5d4eeb42793.ttf",
     "static/media/SourceSansPro-Bold.ttf": "/static/media/SourceSansPro-Bold.4a6e47d1db848f5e8218.ttf",
@@ -33,13 +33,13 @@
     "static/media/locja_46.png": "/static/media/locja_46.922b53af6868cae374e7.png",
     "static/media/przepisy_32.png": "/static/media/przepisy_32.f2e6d8b2a074bb779ab1.png",
     "favicon-16.png": "/favicon-16.png",
-    "serve.json": "/serve.json",
     "manifest.json": "/manifest.json",
-    "main.64746a80.js.map": "/static/js/main.64746a80.js.map",
-    "705.35c37542.js.map": "/static/js/705.35c37542.js.map"
+    "serve.json": "/serve.json",
+    "main.a2ff1c8a.js.map": "/static/js/main.a2ff1c8a.js.map",
+    "790.6deb53af.js.map": "/static/js/790.6deb53af.js.map"
   },
   "entrypoints": [
-    "static/js/705.35c37542.js",
-    "static/js/main.64746a80.js"
+    "static/js/790.6deb53af.js",
+    "static/js/main.a2ff1c8a.js"
   ]
 }

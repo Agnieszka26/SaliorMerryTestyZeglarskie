@@ -136,7 +136,7 @@ export const teoriaZeglowania = [
     {
 		id: 13,
 		image: null,
-		question: "13.	W jakich kursach względem wiatru najbardziej jest przydatny obciągacz bomu?",
+		question: "W jakich kursach względem wiatru najbardziej jest przydatny obciągacz bomu?",
 		options: [
 			"W bajdewindzie ",
 			"Tylko w półwietrze ",
