@@ -22,7 +22,8 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.aga04.pob"
+      "package": "com.aga04.pob",
+      "versionCode": 3
     },
     "web": {
       "favicon": "./assets/favicon.png"
