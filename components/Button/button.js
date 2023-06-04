@@ -1,22 +1,12 @@
-import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { Button } from "react-native-web";
+import { Pressable, Text } from "react-native";
 
-const DefaultButton = ({ text, handlePress, size }) => {
-  return (
-    <Text>text</Text>
-    // <Button styles={styles}
-    // onPress={handlePress}
-    // title={text} />
-  );
+const DefaultButton = ({ text, handlePress, stylePress, styleText }) => {
+	return (
+		<Pressable style={stylePress} onPress={() => handlePress()}>
+			<Text style={styleText}>{text}</Text>
+		</Pressable>
+	);
 };
 
 export default DefaultButton;
-
-const styles = StyleSheet.create({
-  width: 250,
-  height: 100,
-  background: "#FFFFFF",
-  color: "#000000",
-  borderRadius: 16,
-});

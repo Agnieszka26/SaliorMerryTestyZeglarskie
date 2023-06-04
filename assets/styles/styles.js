@@ -8,6 +8,9 @@ export const styles = StyleSheet.create({
 		padding: 10,
 		backgroundColor: "#FFFFFF",
 	},
+	upperCase: {
+		textTransform: "uppercase",
+	},
 
 	disabledButton: {
 		marginTop: 16,
@@ -27,13 +30,18 @@ export const styles = StyleSheet.create({
 		height: 200,
 		width: 200,
 	},
+	questionImage: {
+		height: 100,
+		width: 100,
+	},
 	container: {
 		flex: 1,
 		backgroundColor: "#050F36",
 		alignItems: "center",
 		justifyContent: "center",
-		paddingLeft: 16,
-		paddingRight: 16,
+		padding:32,
+		paddingTop:16,
+		paddingBottom:48,
 	},
 	container5: {
 		flex: 5,
@@ -66,7 +74,6 @@ export const styles = StyleSheet.create({
 
 	button: {
 		marginTop: 16,
-		height: 64,
 		width: 250,
 		backgroundColor: "#FFFFFF",
 		textAlign: "center",
@@ -87,32 +94,33 @@ export const styles = StyleSheet.create({
 		justifyContent: "center",
 		color: "#050F36",
 		borderRadius: 16,
+
 	},
 
 	textRed: {
 		fontSize: 32,
 		fontFamily: "SourceSansPro-Bold",
 		color: "#D53148",
-		paddingBottom: 32,
+		paddingBottom: 16,
 	},
 	textRedSmall: {
 		fontSize: 20,
 		fontFamily: "SourceSansPro-Bold",
 		color: "#D53148",
-		paddingBottom: 32,
+		paddingBottom: 16,
 	},
 
 	textWhiteSmall: {
 		textAlign: "center",
-		fontSize: 20,
+		fontSize: 13,
 		color: "#FFFFFF",
 		alignItems: "center",
 	},
 	textWhite: {
-		paddingTop: 32,
-		paddingBottom: 64,
+		paddingTop: 8,
+		paddingBottom: 16,
 		textAlign: "center",
-		fontSize: 24,
+		fontSize: 16,
 		color: "#FFFFFF",
 	},
 
@@ -143,7 +151,7 @@ export const styles = StyleSheet.create({
 	bigButton: {
 		height: 75,
 		width: 350,
-		marginTop: 32,
+		marginTop: 16,
 		backgroundColor: "#FFFFFF",
 		textAlign: "center",
 		alignItems: "center",
@@ -171,7 +179,7 @@ export const styles = StyleSheet.create({
 	correct: {
 		height: 75,
 		width: 350,
-		marginTop: 32,
+		marginTop: 16,
 		backgroundColor: "#E7FFE4",
 		textAlign: "center",
 		alignItems: "center",
@@ -183,7 +191,7 @@ export const styles = StyleSheet.create({
 	wrong: {
 		height: 75,
 		width: 350,
-		marginTop: 32,
+		marginTop: 16,
 		backgroundColor: "#FFECEF",
 		textAlign: "center",
 		alignItems: "center",
@@ -202,7 +210,7 @@ export const styles = StyleSheet.create({
 	roundButton: {
 		position: "absolute",
 		right: 32,
-		bottom: 16,
+		bottom: 8,
 	},
 	center: {
 		margin: "auto"

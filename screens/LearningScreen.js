@@ -1,20 +1,23 @@
-import React from "react";
-import { View, Text, StyleSheet, Pressable } from "react-native";
-import { styles } from "../assets/styles/styles";
+import React, { useContext } from "react";
+import { Text, View } from "react-native";
 import { AppContext } from "../assets/context/AppContextProvider";
-import { useContext } from "react";
 import { budowaJachtu } from "../assets/questions/budowaJachtu";
+import { locja } from "../assets/questions/locja";
+import { meteorologia } from "../assets/questions/meteorologia";
+import { przepisy } from "../assets/questions/przepisy";
 import { ratownictwo } from "../assets/questions/ratownictwo";
-import {locja} from "../assets/questions/locja";
-import {przepisy} from "../assets/questions/przepisy";
+import { teoriaZeglowania } from "../assets/questions/teoriaZeglowania";
+import { styles } from "../assets/styles/styles";
+import { textStyles } from "../assets/styles/textStyles";
+import DefaultButton from "../components/Button/button";
 
 const buttons = [
-	{ path: "inlandRegulations", name: "przepisy", disabled: false },
-	{ path: "yachtBuilding", name: "budowa jachtów", disabled: false },
-	{ path: "sailingTheory", name: "teoria żeglowania", disabled: true },
-	{ path: "pilotage", name: "locja", disabled: false },
-	{ path: "meteorology", name: "meteorologia", disabled: true },
-	{ path: "lifesaving", name: "ratownictwo", disabled: false },
+	{ path: "inlandRegulations", name: "przepisy" },
+	{ path: "yachtBuilding", name: "budowa jachtów" },
+	{ path: "sailingTheory", name: "teoria żeglowania" },
+	{ path: "pilotage", name: "locja" },
+	{ path: "meteorology", name: "meteorologia" },
+	{ path: "lifesaving", name: "ratownictwo" },
 ];
 
 const LearningScreen = ({ navigation }) => {
@@ -41,6 +44,17 @@ const LearningScreen = ({ navigation }) => {
 				setDepartment(locja);
 				navigation.navigate("GetNumberQuestion");
 				break;
+			case "meteorology":
+				setModuleName(name);
+				setDepartment(meteorologia);
+				navigation.navigate("GetNumberQuestion");
+				break;
+			case "sailingTheory":
+				setModuleName(name);
+				setDepartment(teoriaZeglowania);
+				navigation.navigate("GetNumberQuestion");
+				break;
+
 			default:
 				break;
 		}
@@ -48,29 +62,23 @@ const LearningScreen = ({ navigation }) => {
 
 	return (
 		<View style={[styles.container]}>
-			<View style={[styles.containerMW300]}>
-				<Text style={[styles.textRed, textStyles.textBold]}> nauka </Text>
-
-				{buttons.map(({ path, name, disabled }) => {
-					return (
-						<Pressable
-							key={path}
-							style={disabled ? [styles.disabledButton] : [styles.button]}
-							onPress={() => getDepartment(path, name)}
-						>
-							<Text style={[styles.text, textStyles.textRegular]}>{name}</Text>
-						</Pressable>
-					);
-				})}
-			</View>
+			<Text style={[styles.textRed, textStyles.textBold, styles.upperCase]}>
+				{" "}
+				nauka{" "}
+			</Text>
+			{buttons.map(({ path, name }) => {
+				return (
+					<DefaultButton
+						text={name}
+						key={path}
+						styleText={[styles.text, textStyles.textRegular, styles.upperCase]}
+						stylePress={styles.button}
+						handlePress={() => getDepartment(path, name)}
+					/>
+				);
+			})}
 		</View>
 	);
 };
 
 export default LearningScreen;
-const textStyles = StyleSheet.create({
-	textRegular: { fontFamily: "SourceSansPr-Regular" },
-	textBold: {
-		textBold: "SourceSansPro-Bold",
-	},
-});

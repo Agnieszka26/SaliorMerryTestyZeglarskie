@@ -1,12 +1,19 @@
 {
   "files": {
-    "main.js": "/static/js/main.451b0282.js",
-    "static/js/705.b0fe354b.js": "/static/js/705.b0fe354b.js",
+    "main.js": "/static/js/main.64746a80.js",
+    "static/js/705.35c37542.js": "/static/js/705.35c37542.js",
+    "static/media/meteo_32.jpg": "/static/media/meteo_32.08c4c0e2ee012a111ada.jpg",
     "static/media/SourceSansPro-Regular.ttf": "/static/media/SourceSansPro-Regular.a5357cc4e5d4eeb42793.ttf",
     "static/media/SourceSansPro-Bold.ttf": "/static/media/SourceSansPro-Bold.4a6e47d1db848f5e8218.ttf",
     "static/media/salior-merry-logo-white.png": "/static/media/salior-merry-logo-white.59c31ac9e9d0498b04c6.png",
     "favicon.ico": "/favicon.ico",
+    "static/media/teoria_24.png": "/static/media/teoria_24.9753dcb4a755c7feb25c.png",
+    "static/media/meteo_02.png": "/static/media/meteo_02.613736c6dba499c6db58.png",
+    "static/media/meteo_12.png": "/static/media/meteo_12.e4a15e1a598a840b87ab.png",
+    "static/media/meteo_11.png": "/static/media/meteo_11.c7f8158f66f09384b8ab.png",
+    "static/media/meteo_23.png": "/static/media/meteo_23.a5b0a72903f82ba8cfbc.png",
     "index.html": "/index.html",
+    "static/media/teoria_23.png": "/static/media/teoria_23.2494bdb7c8c1ff2bd722.png",
     "static/media/locja_42.png": "/static/media/locja_42.d2c78813d77f92bc8d5f.png",
     "static/media/locja_19.png": "/static/media/locja_19.a7990702d222f383449b.png",
     "static/media/locja_12.png": "/static/media/locja_12.2184cd92433d0326909a.png",
@@ -19,16 +26,20 @@
     "static/media/locja_36.png": "/static/media/locja_36.49dd0237c01c149e4ac5.png",
     "static/media/locja_27.png": "/static/media/locja_27.09e83b8db216789d9be9.png",
     "static/media/locja_16.png": "/static/media/locja_16.a88fd6366b2def2e13e3.png",
+    "static/media/meteo_24.png": "/static/media/meteo_24.e1eba63fb1bf21f68ded.png",
+    "static/media/meteo_08.png": "/static/media/meteo_08.ec85c1f34b2a7b70445d.png",
+    "static/media/przepisy_35.png": "/static/media/przepisy_35.4317a8c7d7b138b15ac6.png",
     "static/media/locja_35.png": "/static/media/locja_35.9364c7f3b97071e02bcd.png",
     "static/media/locja_46.png": "/static/media/locja_46.922b53af6868cae374e7.png",
+    "static/media/przepisy_32.png": "/static/media/przepisy_32.f2e6d8b2a074bb779ab1.png",
     "favicon-16.png": "/favicon-16.png",
     "serve.json": "/serve.json",
     "manifest.json": "/manifest.json",
-    "main.451b0282.js.map": "/static/js/main.451b0282.js.map",
-    "705.b0fe354b.js.map": "/static/js/705.b0fe354b.js.map"
+    "main.64746a80.js.map": "/static/js/main.64746a80.js.map",
+    "705.35c37542.js.map": "/static/js/705.35c37542.js.map"
   },
   "entrypoints": [
-    "static/js/705.b0fe354b.js",
-    "static/js/main.451b0282.js"
+    "static/js/705.35c37542.js",
+    "static/js/main.64746a80.js"
   ]
 }

@@ -1,9 +1,11 @@
 import { useFonts } from "expo-font";
 import React, { useContext } from "react";
-import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import { StyleSheet, Text, TextInput, View } from "react-native";
 import { AppContext } from "../assets/context/AppContextProvider";
+import { getRandomQuestions } from "../assets/helpers/index";
 import { styles } from "../assets/styles/styles";
-import {getRandomQuestions} from "../assets/helpers/index"
+import { textStyles } from "../assets/styles/textStyles";
+import DefaultButton from "../components/Button/button";
 
 const GetNumberQuestion = ({ navigation }) => {
 	const [fontsLoaded] = useFonts({
@@ -25,27 +27,32 @@ const GetNumberQuestion = ({ navigation }) => {
 
 	return (
 		<View style={[styles.container]}>
-			<Text style={[styles.textRed, textStyles.textBold]}> nauka </Text>
-			<Text style={[styles.textRedSmall, textStyles.textRegular]}>
-				{" "}
-				{moduleName}{" "}
+			<Text style={[styles.textRed, textStyles.textBold, styles.upperCase]}>
+				nauka
+			</Text>
+			<Text
+				style={[styles.textRedSmall, textStyles.textRegular, styles.upperCase]}
+			>
+				{moduleName}
 			</Text>
 			<Text style={[styles.textWhite, textStyles.textRegular]}>
-				Ile pytań chcesz dziś się nauczyć? (max 60)
+				Ile pytań chcesz dziś się nauczyć? (max 50)
 			</Text>
+
 			<TextInput
 				style={styles.input}
 				onChangeText={setQuestionNumber}
-				value={questionNumber}
+				value={questionNumber.toString()}
 				placeholder="na przykład.: 25"
 				keyboardType="numeric"
 			/>
 			<View style={styles.buttons2}>
-				<Pressable style={styles.button} onPress={handleToTest}>
-					<Text style={[styles.text, textStyles.textRegular]}>
-						rozpocznij naukę
-					</Text>
-				</Pressable>
+				<DefaultButton
+					text={`rozpocznij naukę`}
+					stylePress={styles.button}
+					handlePress={handleToTest}
+					styleText={[styles.upperCase, styles.text, textStyles.textRegular]}
+				/>
 			</View>
 		</View>
 	);
@@ -53,9 +60,4 @@ const GetNumberQuestion = ({ navigation }) => {
 
 export default GetNumberQuestion;
 
-const textStyles = StyleSheet.create({
-	textRegular: { fontFamily: "SourceSansPr-Regular" },
-	textBold: {
-		textBold: "SourceSansPro-Bold",
-	},
-});
+

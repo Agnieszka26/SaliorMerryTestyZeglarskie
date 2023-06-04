@@ -41,7 +41,7 @@ export const teoriaZeglowania = [
 		options: [
 			"Zrzucić fok i żeglować na samym grocie",
 			"Zarefować grot i postawić mniejszy fok (lub go zarefować, o ile jest to możliwe, np. roler) ",
-			"",
+			"Maksymalnie zarefować grot i pozostawić postawiony normalny fok",
 		],
 		answer: "Zarefować grot i postawić mniejszy fok (lub go zarefować, o ile jest to możliwe, np. roler) ",
 	},

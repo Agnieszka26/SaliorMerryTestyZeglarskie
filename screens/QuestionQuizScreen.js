@@ -1,8 +1,9 @@
 import { useFonts } from "expo-font";
 import React, { useContext, useEffect, useState } from "react";
-import { Pressable, StyleSheet, Text, View, Image} from "react-native";
+import { Image, Pressable, Text, View } from "react-native";
 import { AppContext } from "../assets/context/AppContextProvider";
 import { styles } from "../assets/styles/styles";
+import { textStyles } from "../assets/styles/textStyles";
 
 const QuestionQuizScreen = ({ navigation }) => {
 	const [fontsLoaded] = useFonts({
@@ -31,10 +32,8 @@ const QuestionQuizScreen = ({ navigation }) => {
 				setMinutes((min) => min - 1);
 			}
 			if (seconds === 0 && minutes === 0) {
-				console.log("time up");
 			}
 		}, 1000);
-		console.log(seconds);
 		return () => clearInterval(interval);
 	}, [seconds]);
 
@@ -60,7 +59,10 @@ const QuestionQuizScreen = ({ navigation }) => {
 	return (
 		<View style={styles.container}>
 			<View style={styles.containerMW300}>
-				<Text style={[styles.textRed, styles.textBold]}> test</Text>
+				<Text style={[styles.textRed, styles.textBold, styles.upperCase]}>
+					{" "}
+					test
+				</Text>
 				{step - 1 === drawedQuestions.length ? (
 					<View>
 						<Text style={styles.textWhiteSmall}>Koniec testu</Text>
@@ -124,7 +126,7 @@ const QuestionQuizScreen = ({ navigation }) => {
 											<Text style={styles.textWhite}> {question}</Text>
 											<Image
 												source={image}
-												style={image && [styles.image, styles.center]}
+												style={image && [styles.questionImage, styles.center]}
 											/>
 											{options?.map((x, index) => {
 												return (
@@ -157,10 +159,3 @@ const QuestionQuizScreen = ({ navigation }) => {
 };
 
 export default QuestionQuizScreen;
-
-const textStyles = StyleSheet.create({
-	textRegular: { fontFamily: "SourceSansPr-Regular" },
-	textBold: {
-		textBold: "SourceSansPro-Bold",
-	},
-});

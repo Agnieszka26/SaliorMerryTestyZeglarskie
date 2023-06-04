@@ -4,9 +4,9 @@ import img11 from "../../assets/images_meteo/meteo_11.png";
 import img12 from "../../assets/images_meteo/meteo_12.png";
 import img23 from "../../assets/images_meteo/meteo_23.png";
 import img24 from "../../assets/images_meteo/meteo_24.png";
-import img32 from "../../assets/images_meteo/meteo_32.png";
+import img32 from "../../assets/images_meteo/meteo_32.jpg";
 
-export const meteorogia = [
+export const meteorologia = [
 	{
 		id: 1,
 		image: null,
@@ -512,7 +512,7 @@ export const meteorogia = [
 			"Przy niskim brzegu ",
 			"Na środku jeziora",
 		],
-		answer: "Przy wysokim brzegu ",
+		answer: "Przy wysokim brzegu",
 	},
     {
 		id:44,
@@ -584,7 +584,7 @@ export const meteorogia = [
 			"2°B ",
 			"4°B ",
 		],
-		answer: "",
+		answer: "4°B ",
 	},
     {
 		id:50,

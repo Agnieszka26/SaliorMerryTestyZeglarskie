@@ -1,8 +1,10 @@
-import { Text, View, Pressable, StyleSheet, Image } from "react-native";
-import React, { useContext, useEffect } from "react";
-import { AppContext } from "../assets/context/AppContextProvider";
 import { useFonts } from "expo-font";
+import React, { useContext, useEffect } from "react";
+import { Image, Text, View } from "react-native";
+import { AppContext } from "../assets/context/AppContextProvider";
 import { styles } from "../assets/styles/styles";
+import { textStyles } from "../assets/styles/textStyles";
+import DefaultButton from "../components/Button/button";
 import NextIcon from "../components/NextIcon.js";
 
 const SeeResults = ({ navigation }) => {
@@ -13,9 +15,7 @@ const SeeResults = ({ navigation }) => {
 	const {
 		step,
 		setStep,
-		correctAnswers,
 		setCorrectAnswers,
-		wrongAnswers,
 		setWrongAnswers,
 		setDrawedQuestions,
 		drawedQuestions,
@@ -56,68 +56,49 @@ const SeeResults = ({ navigation }) => {
 		<View style={styles.container}>
 			{drawedQuestions.length + 1 === step && (
 				<View>
-					<Pressable style={styles.bigButton} onPress={handleFinish}>
-						<Text style={[styles.text, styles.textRegular]}>Zakończ</Text>
-					</Pressable>
+					<DefaultButton
+						text={`Zakończ`}
+						stylePress={styles.bigButton}
+						handlePress={handleFinish}
+						styleText={[styles.text, styles.textRegular, styles.upperCase]}
+					/>
 				</View>
 			)}
 
 			{drawedQuestions?.map(
-				({ question, options, answer, image}, i) =>
+				({ question, options, answer, image }, i) =>
 					i === step - 1 && (
-						<View key={question}  style={[styles.containerMW300]}>
+						<View key={question} style={[styles.containerMW300]}>
 							<Text style={styles.textWhite}> {question}</Text>
-							<Image
-												source={image}
-												style={image && [styles.image]}
-											/>
+							<Image source={image} style={image && [styles.image]} />
 							{options?.map((o) => {
 								return (
-									<View key={o}>
-										<Pressable style={checkCorrectAndWrongStyle(i, o, answer)}>
-											<Text
-												style={
-													o === answer
-														? [
-																textStyles.correctText,
-																styles.textSmallButton,
-																textStyles.textRegular,
-														  ]
-														: [styles.textSmallButton, textStyles.textRegular]
-												}
-											>
-												{o}
-											</Text>
-										</Pressable>
-									</View>
+									<DefaultButton
+										key={o}
+										text={o}
+										stylePress={checkCorrectAndWrongStyle(i, o, answer)}
+										handlePress={handleFinish}
+										styleText={
+											o === answer
+												? [
+														textStyles.correctText,
+														styles.textSmallButton,
+														textStyles.textRegular,
+												  ]
+												: [styles.textSmallButton, textStyles.textRegular]
+										}
+									/>
 								);
 							})}
-				<Pressable
-					style={styles.roundButton}
-					onPress={() => handleNextButton()}
-				>
-					<NextIcon />
-				</Pressable>
+							<NextIcon
+								style={styles.roundButton}
+								onPress={() => handleNextButton()}
+							/>
 						</View>
 					)
 			)}
-
-
 		</View>
 	);
 };
 
 export default SeeResults;
-
-const textStyles = StyleSheet.create({
-	textRegular: { fontFamily: "SourceSansPr-Regular" },
-	textBold: {
-		textBold: "SourceSansPro-Bold",
-	},
-	correctText: {
-		color: "#2D6E27",
-	},
-	wrongText: {
-		color: "#FFECEF",
-	},
-});
