@@ -182,11 +182,11 @@ export const teoriaZeglowania = [
 		image: null,
 		question: "Prawidłowo wykonany zwrot przez rufę to:",
 		options: [
-			"Przejście dziobem linii wiatru od kursu baksztag jednego halsu do kursu baksztag przeciwnego halsu. ",
-			"Przejście dziobem linii wiatru od półwiatru jednego halsu do półwiatru przeciwnego halsu. ",
-			"Przejście dziobem linii wiatru od kursu bajdewind jednego halsu do kursu bajdewind przeciwnego halsu.",
+			"Przejście rufą linii wiatru od kursu baksztag jednego halsu do kursu baksztag przeciwnego halsu. ",
+			"Przejście rufą linii wiatru od półwiatru jednego halsu do półwiatru przeciwnego halsu. ",
+			"Przejście rufą linii wiatru od kursu bajdewind jednego halsu do kursu bajdewind przeciwnego halsu.",
 		],
-		answer: "Przejście dziobem linii wiatru od kursu baksztag jednego halsu do kursu baksztag przeciwnego halsu. ",
+		answer: "Przejście rufą linii wiatru od kursu baksztag jednego halsu do kursu baksztag przeciwnego halsu. ",
 	},
     {
 		id: 18,
@@ -386,7 +386,7 @@ export const teoriaZeglowania = [
 			"Mieczowo-balastowe",
 			"Balastowe",
 		],
-		answer: "Balastowe",
+		answer: "Mieczowe",
 	},
     {
 		id: 36,
