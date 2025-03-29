@@ -183,7 +183,7 @@ export const locja = [
 			"zielonego",
 			"Żółtego",
 		],
-		answer: "czerwonego",
+		answer: "zielonego",
 	},
     {
 		id: 15,
