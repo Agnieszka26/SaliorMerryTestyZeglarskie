@@ -19,8 +19,6 @@ const QuizsScreen = ({ navigation }) => {
 		"SourceSansPr-Regular": require("../assets/fonts/SourceSansPro-Regular.ttf"),
 	});
 	const { setDrawedQuestions } = useContext(AppContext);
-console.log(budowaJachtu.length, ratownictwo.length, locja.length, przepisy.length, teoriaZeglowania.length, meteorologia.length);
-
 	const handleToTest = () => {
 		setDrawedQuestions((prev) =>
 			[
