@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/static/js/main.a2ff1c8a.js",
-    "static/js/790.6deb53af.js": "/static/js/790.6deb53af.js",
+    "main.js": "/static/js/main.b69cf683.js",
+    "static/js/851.c82d63fe.js": "/static/js/851.c82d63fe.js",
     "static/media/meteo_32.jpg": "/static/media/meteo_32.08c4c0e2ee012a111ada.jpg",
     "static/media/SourceSansPro-Regular.ttf": "/static/media/SourceSansPro-Regular.a5357cc4e5d4eeb42793.ttf",
     "static/media/SourceSansPro-Bold.ttf": "/static/media/SourceSansPro-Bold.4a6e47d1db848f5e8218.ttf",
@@ -35,11 +35,11 @@
     "favicon-16.png": "/favicon-16.png",
     "manifest.json": "/manifest.json",
     "serve.json": "/serve.json",
-    "main.a2ff1c8a.js.map": "/static/js/main.a2ff1c8a.js.map",
-    "790.6deb53af.js.map": "/static/js/790.6deb53af.js.map"
+    "main.b69cf683.js.map": "/static/js/main.b69cf683.js.map",
+    "851.c82d63fe.js.map": "/static/js/851.c82d63fe.js.map"
   },
   "entrypoints": [
-    "static/js/790.6deb53af.js",
-    "static/js/main.a2ff1c8a.js"
+    "static/js/851.c82d63fe.js",
+    "static/js/main.b69cf683.js"
   ]
 }
